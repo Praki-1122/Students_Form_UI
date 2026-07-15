@@ -1,0 +1,45 @@
+<div class="studentForm">
+
+<h1>Student Management System</h1>
+<div class="form-container">
+  <label>Student Name</label>
+  <input type="text" [(ngModel)]="studentName" />
+
+  <label>Roll No</label>
+  <input type="number" [(ngModel)]="rollno" />
+
+  <label>Department</label>
+  <input type="text" [(ngModel)]="dept" />
+
+  <label>Year</label>
+  <input type="number" [(ngModel)]="year" />
+  
+</div>
+<div>
+  <button class="submitButton" (click)="createStudent()">Add Student</button>
+</div>
+
+</div>
+<table >
+  <tr>
+    <th>RollNo</th>
+    <th>Name</th>
+    <th>Branch</th>
+    <th>Year</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor = "let item of studentDetails " >
+    <td>{{item.RollNo}}</td>
+    <td>{{item.Name}}</td>
+    <td>{{item.Department}}</td>
+    <td>{{item.Year}}</td>
+    <td><button class="tableButton" (click) = "setStudent(item)">Edit</button></td>
+    <td><button class="tableButton" (click)="deleteStudent(item)">Delete</button></td>
+  </tr>
+</table>
+
+
+
+
+
